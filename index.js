@@ -70,13 +70,13 @@ const questions = [
     }
 },
 ];
-// //function to write file
-// function writeToFile(fileName, data) {
-// 	//console.log("Writing [" + data + "] to file [" + fileName + "]")
-//     filesystem.writeFile(fileName, data, function (err) {
-//         if (err) {
-//             return console.log(err);
-//         }
-//         console.log("you have generated a logo.svg!");
-//     });
-// }
+//function to write file
+function writeToFile(fileName, data) {
+	//console.log("Writing [" + data + "] to file [" + fileName + "]")
+    filesystem.writeFile(fileName, data, function (err) {
+        if (err) {
+            return console.log(err);
+        }
+        console.log("you have generated a logo.svg!");
+    });
+}
