@@ -1,0 +1,17 @@
+{
+  "name": "my-logo-generator",
+  "version": "1.0.0",
+  "description": "It will create a logo # 10 Object-oriented Programming: SVG Logo Maker",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sehar",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
+}
