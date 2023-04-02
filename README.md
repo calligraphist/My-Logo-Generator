@@ -18,11 +18,11 @@ It will create a logo
 
 Following is the link to my walkthrough video:
 
-<!-- https://watch.screencastify.com/v/bcugT94hFRwVYJVusCid -->
-
+https://watch.screencastify.com/v/UFkyPQsmqz2eCU88n2QL
+ 
 ## Screenshot
 Following is the screenshot of my test README:
-<!-- ![this fullfill all the requirements](./test.png) -->
+![this fullfill all the requirements](./circle.png)
 
 ## Installation 
 
@@ -35,7 +35,7 @@ you will be asked some questions. After you answer all the questions, a logo of 
 you can then use the logo as you wish.
 ## Acknowledgements
 
-This project is done for UNB Bootcamp, thanks for the opportunity. I am thankful to my instructor and instructor assistant for the much needed help. Code inspiration is taken from ThomasCalle.
+This project is done for UNB Bootcamp, thanks for the opportunity. I am thankful to my instructor and instructor assistant for the much needed help.
 
 ## Questions
 
