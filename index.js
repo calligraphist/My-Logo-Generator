@@ -1,10 +1,10 @@
 //Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const shapes = require('./lib/shapes');
-const shapesTest = require('./lib/shapes.test');
+//const shapes = require('./lib/shapes');
+//const shapesTest = require('./lib/shapes.test');
 const {Circle, Square, Triangle} = require("./lib/shapes")
-var path = require('path');
+
 //svg class
 class Svg{
     constructor(){
@@ -16,7 +16,7 @@ class Svg{
     setTextElement(text,color){
         this.textElement = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
     }
-    setShapeElement(shape){
+    setShapeElement(shape){    
         this.shapeElement=shape.render()
     }
 }
@@ -46,10 +46,11 @@ const questions = [
 {
     type:`input`,
     name:`text`,
-    message:`please provide text for your logo. (Required)`,
+    message:`please provide text for your logo upto three letters. (Required)`,
     validate: textInput=>{
-        if (textInput){
+        if (textInput && textInput.length<= 3){
             return true;
+            
         }else{
             console.log(`please enter the desired text!`);
             return false;
@@ -74,7 +75,7 @@ const questions = [
 // //function to write file
 // function writeToFile(fileName, data) {
 // 	//console.log("Writing [" + data + "] to file [" + fileName + "]")
-//     filesystem.writeFile(fileName, data, function (err) {
+//     fs.writeFile(fileName, data, function (err) {
 //         if (err) {
 //             return console.log(err);
 //         }
@@ -82,18 +83,42 @@ const questions = [
 //     });
 // }
 
-// function to write README file
-function writeToFile(fileName, data) {
-    return fs.writeFileSync(path.join(__dirname, "/dist/", fileName),data)
- }
-
+// // TODO: Create a function to write README file
+//  function writeToFile(fileName, data) {
+//      return fs.writeFileSync(path.join(__dirname, "/sample/", fileName),data)
+//    }
+const svg =new Svg()
 
 // a function to initialize app
 function init() {
     inquirer.prompt(questions)
     .then(logoData => {
-        console.log(logoData);
-       writeToFile("logo.svg", shapes(logoData))
+       console.log(logoData);
+       let shape;
+       if(logoData.shape === "Circle"){
+           shape=new Circle(logoData.color)
+           shape.setColor(logoData.color)
+   
+          svg.setTextElement(logoData.text, logoData.textcolor)
+          svg.setShapeElement(shape)
+  
+           fs.writeFile("logo.svg", svg.render(), ()=>{})
+    }
+    // else if(logoData.shape === "Square"){
+    //     shape=new Square(logoData.color)
+    //     shape.setColor(logoData.color) 
+
+    //     svg.setTextElement(logoData.text, logoData.textcolor)
+    //       svg.setShapeElement(shape)
+    //       fs.writeFile("logo.svg", svg.render(), ()=>{})
+    // }
+    // else (logoData.shape === "Triangle"){
+    //     shape=new Triangle(logoData.color)
+    //     shape.setColor(logoData.color) 
+    //       svg.setTextElement(logoData.text, logoData.textcolor)
+    //       svg.setShapeElement(shape)
+    //       fs.writeFile("logo.svg", svg.render(), ()=>{})
+    // }
      })
  }
 // Function call to initialize app
