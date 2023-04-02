@@ -18,7 +18,7 @@ It will create a logo
 
 Following is the link to my walkthrough video:
 
-https://watch.screencastify.com/v/UFkyPQsmqz2eCU88n2QL
+https://watch.screencastify.com/v/DvXQYZBRB4ru0FkhnnsV
  
 ## Screenshot
 Following is the screenshot of my test README:
