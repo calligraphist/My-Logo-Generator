@@ -35,7 +35,7 @@ you will be asked some questions. After you answer all the questions, a logo of 
 you can then use the logo as you wish.
 ## Acknowledgements
 
-This project is done for UNB Bootcamp, thanks for the opportunity. I am thankful to my instructor and instructor assistant for the much needed help. Code inspiration is taken from Thomas.
+This project is done for UNB Bootcamp, thanks for the opportunity. I am thankful to my instructor and instructor assistant for the much needed help. Code inspiration is taken from ThomasCalle.
 
 ## Questions
 

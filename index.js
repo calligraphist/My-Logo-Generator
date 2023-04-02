@@ -1,8 +1,6 @@
 //Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-//const shapes = require('./lib/shapes');
-//const shapesTest = require('./lib/shapes.test');
 const {Circle, Square, Triangle} = require("./lib/shapes")
 
 //svg class
@@ -14,7 +12,7 @@ class Svg{
     render(){
     return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeElement}${this.textElement}</svg>`    }
     setTextElement(text,color){
-        this.textElement = `<text x="150" y="125" font-size="75" text-anchor="middle" fill="${color}">${text}</text>`
+        this.textElement = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
     }
     setShapeElement(shape){    
         this.shapeElement=shape.render()
