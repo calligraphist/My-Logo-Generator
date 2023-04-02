@@ -14,7 +14,7 @@ class Svg{
     render(){
     return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeElement}${this.textElement}</svg>`    }
     setTextElement(text,color){
-        this.textElement = `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
+        this.textElement = `<text x="150" y="125" font-size="75" text-anchor="middle" fill="${color}">${text}</text>`
     }
     setShapeElement(shape){    
         this.shapeElement=shape.render()
@@ -72,21 +72,7 @@ const questions = [
 },
 ];
 
-// //function to write file
-// function writeToFile(fileName, data) {
-// 	//console.log("Writing [" + data + "] to file [" + fileName + "]")
-//     fs.writeFile(fileName, data, function (err) {
-//         if (err) {
-//             return console.log(err);
-//         }
-//         console.log("you have generated a logo.svg!");
-//     });
-// }
 
-// // TODO: Create a function to write README file
-//  function writeToFile(fileName, data) {
-//      return fs.writeFileSync(path.join(__dirname, "/sample/", fileName),data)
-//    }
 const svg =new Svg()
 
 // a function to initialize app
@@ -104,21 +90,20 @@ function init() {
   
            fs.writeFile("logo.svg", svg.render(), ()=>{})
     }
-    // else if(logoData.shape === "Square"){
-    //     shape=new Square(logoData.color)
-    //     shape.setColor(logoData.color) 
-
-    //     svg.setTextElement(logoData.text, logoData.textcolor)
-    //       svg.setShapeElement(shape)
-    //       fs.writeFile("logo.svg", svg.render(), ()=>{})
-    // }
-    // else (logoData.shape === "Triangle"){
-    //     shape=new Triangle(logoData.color)
-    //     shape.setColor(logoData.color) 
-    //       svg.setTextElement(logoData.text, logoData.textcolor)
-    //       svg.setShapeElement(shape)
-    //       fs.writeFile("logo.svg", svg.render(), ()=>{})
-    // }
+    else if(logoData.shape === "Square"){
+        shape=new Square(logoData.color)
+        shape.setColor(logoData.color) 
+        svg.setTextElement(logoData.text, logoData.textcolor)
+        svg.setShapeElement(shape)
+        fs.writeFile("logo.svg", svg.render(), ()=>{})
+    }
+    else if(logoData.shape === "Triangle") 
+        shape=new Triangle(logoData.color)
+        shape.setColor(logoData.color) 
+          svg.setTextElement(logoData.text, logoData.textcolor)
+          svg.setShapeElement(shape)
+          fs.writeFile("logo.svg", svg.render(), ()=>{})
+    
      })
  }
 // Function call to initialize app
